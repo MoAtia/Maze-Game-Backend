@@ -11,6 +11,7 @@ from prometheus_client import Counter, Histogram
 from pathlib import Path
 import time
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
 
 
 # Setup logging
@@ -20,6 +21,14 @@ logging.info("Importing libraries done.")
 # Initialize FastAPI app
 app = FastAPI()
 
+# Allow all origins (for testing/dev only)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Replace with actual domain in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 num_cols = []

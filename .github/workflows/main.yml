@@ -70,13 +70,6 @@ jobs:
           echo "✅ Logged into EC2"
 
 
-          sudo yum update -y
-          sudo yum install -y docker git
-          sudo service docker start
-          sudo usermod -aG docker ec2-user
-
-
-
           # Stop and remove existing container
           docker rm -f myapp || true
 
