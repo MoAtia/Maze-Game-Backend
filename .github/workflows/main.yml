@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 env:
-  IMAGE_NAME: churn-prediction
-  DOCKER_USERNAME: atia2000
+  IMAGE_NAME: hand_gesture
+  DOCKER_USERNAME: moatia
   TAG: latest
 
 jobs:
