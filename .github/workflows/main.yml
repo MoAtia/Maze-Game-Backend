@@ -71,7 +71,10 @@ jobs:
 
 
           # Stop and remove existing container
-          docker rm -f myapp || true
+          docker stop myapp || true
+          docker rm myapp || true
+          docker rmi myapp || true
+
 
           # Remove old images to save space (optional)
           docker rmi -f $(docker images -q) || true
