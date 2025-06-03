@@ -60,7 +60,16 @@ jobs:
       run: |
         echo "${{ secrets.EC2_SSH_KEY }}" > ec2_key.pem
         chmod 600 ec2_key.pem
+    - name: Clean up to free disk space
 
+
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf /usr/local/share/boost
+        sudo docker system prune -af
+
+        
     - name: Deploy to EC2 and Run Container
       env:
         HOST: ${{ secrets.EC2_HOST }}
