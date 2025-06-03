@@ -71,18 +71,18 @@ jobs:
 
 
           # Stop and remove existing container
-          docker stop myapp || true
-          docker rm myapp || true
-          docker rmi myapp || true
+          sudo docker stop myapp || true
+          sudo docker rm myapp || true
+          sudo docker rmi myapp || true
 
 
           # Remove old images to save space (optional)
-          docker rmi -f $(docker images -q) || true
+          sudo docker rmi -f $(docker images -q) || true
 
           # Pull and run latest image
-          docker pull $DOCKER_IMAGE
-          docker run -d --name myapp -p 80:8000 $DOCKER_IMAGE
+          sudo docker pull $DOCKER_IMAGE
+          sudo docker run -d --name myapp -p 80:8000 $DOCKER_IMAGE
 
-          docker logs myapp
+          sudo docker logs myapp
           echo "✅ Deployed latest image to EC2"
         EOF
