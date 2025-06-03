@@ -33,6 +33,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://moatia.github.io",
+        "https://mlops-final-project-production-ed5b.up.railway.app"
         "http://localhost:5500",  # If you have a local dev frontend
         "http://localhost:8080",
     ],
