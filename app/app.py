@@ -143,7 +143,7 @@ class Landmarks(BaseModel):
 @app.get("/")
 def home():
     logging.info("Home endpoint accessed.")
-    return {"message": "Welcome to the Churn Prediction API!"}
+    return {"message": "Welcome to the Hand gesture to directions API!"}
 
 @app.get("/health")
 def health():
