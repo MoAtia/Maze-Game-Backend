@@ -22,14 +22,20 @@ logging.info("Importing libraries done.")
 app = FastAPI()
 
 # Allow all origins (for testing/dev only)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],  # Replace with actual domain in production
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with actual domain in production
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 num_cols = []
 for i in range(1, 22):
